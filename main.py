@@ -26,4 +26,26 @@ def primes_less_than(n):
 			all_primes.append(p)
 	return all_primes
 
-print("All primes less than 1,000:\n"+str(primes_less_than(1000)))
+# print("All primes less than 1,000:\n"+str(primes_less_than(9999)))
+
+
+
+p = 433
+q = 283
+N = p * q
+T = (p-1)*(q-1)
+
+
+potential_es = []
+for i in range(T):
+	if is_coprime(i, T) == True and is_coprime(i, N) == True and i < T:
+		potential_es.append(i)
+# print("Potential E Values:",potential_es)
+e = 121823
+
+running = True
+i = 0
+while running == True:
+	if (e * i) % T == 1:
+		print(i)
+		running = False
